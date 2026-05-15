@@ -1,0 +1,4 @@
+## Bibliotecas necessárias para os trabalhos
+streamlit
+supabase
+google-genai
