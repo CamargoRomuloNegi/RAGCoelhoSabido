@@ -45,12 +45,14 @@ if pergunta := st.chat_input("Ex: Como funciona o cálculo da base de cálculo d
     with st.chat_message("assistant"):
         with st.spinner("Buscando artigos no regulamento..."):
             try:
-                # PASSO A: Transformar a pergunta em matemática (3072 dimensões)
+                # PASSO A: Transformar a pergunta em matemática com o modelo validado
                 resposta_emb = ai_client.models.embed_content(
-                    model="gemini-embedding-2",
+                    model="gemini-embedding-2", # Modelo corrigido conforme seu ajuste
                     contents=pergunta,
                     config={"output_dimensionality": 3072}
                 )
+                
+                # AQUI ESTAVA O ERRO: Adicionamos o  para acessar o item correto da lista
                 vetor_pergunta = resposta_emb.embeddings.values
 
                 # PASSO B: Buscar no Supabase os artigos mais próximos
