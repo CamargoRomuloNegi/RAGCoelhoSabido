@@ -47,7 +47,7 @@ if pergunta := st.chat_input("Ex: Como funciona o cálculo da base de cálculo d
             try:
                 # PASSO A: Transformar a pergunta em matemática (3072 dimensões)
                 resposta_emb = ai_client.models.embed_content(
-                    model="text-embedding-004",
+                    model="gemini-embedding-2",
                     contents=pergunta,
                     config={"output_dimensionality": 3072}
                 )
