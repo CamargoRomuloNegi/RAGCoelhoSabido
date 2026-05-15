@@ -55,7 +55,7 @@ if pergunta := st.chat_input("Ex: Como funciona o cálculo da base de cálculo d
                 )
                 
                 # CORREÇÃO ESTRUTURAL APLICADA: Acessando o índice  da lista de embeddings
-                vetor_pergunta = resposta_emb.embeddings.values
+                vetor_pergunta = resposta_emb.embeddings[0].values
 
                 # PASSO B: Buscar no Supabase os artigos mais próximos
                 busca_supabase = supabase.rpc(
